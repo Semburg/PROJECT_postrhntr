@@ -1,0 +1,54 @@
+<% let gold="gold" %>
+    <% if (page>=11) { %>
+        <button><a href=<%=`/movies/${page-10}` %> >&lt; &lt;</a></button>
+        <% } else { %>
+            <button><a href=<%=`/movies/1` %> >&lt; &lt;</a></button>
+            <% } %>
+                <% if (page>=2) { %>
+                    <button><a href=<%=`/movies/${page-1}` %> >&lt; </a></button>
+                    <% } else { %>
+                        <button><a href=<%=`/movies/1` %> >&lt; </a></button>
+                        <% } %>
+
+                            <% if (page>=5 && page<490) { %>
+                                    <% for( let index=page-4; index < page+5; index++ ) { %>
+                                        <button style=<%=`background:${index==page?gold:''}`%>><a
+                                                href=<%=`/movies/${index}` %> ><%= index %></a></button>
+                                        <% } %>
+                                            <% } else if(page>=490) {%>
+                                                <% for( let index=page-4; index <=500; index++ ) { %>
+                                                    <button style=<%=`background:${index==page?gold:''}`%>><a
+                                                            href=<%=`/movies/${index}` %>
+                                                            ><%= index %></a></button>
+                                                    <% } %>
+                                                        <% } else {%>
+                                                            <% for( let index=1; index < 10; index++ ) { %>
+                                                                <button
+                                                                    style=<%=`background:${index==page?gold:''}`%>><a
+                                                                        href=<%=`/movies/${index}` %>
+                                                                        ><%= index %></a></button>
+                                                                <% } %>
+                                                                    <% } %>
+
+                                                                        <% if (page<=499) { %>
+                                                                            <button><a href=<%=`/movies/${page+1}` %>
+                                                                                    >&gt;
+                                                                                </a></button>
+                                                                            <% } else { %>
+                                                                                <button><a href=<%=`/movies/500` %>
+                                                                                        >&gt;
+                                                                                    </a></button>
+                                                                                <% } %>
+                                                                                    <% if (page<=489) { %>
+                                                                                        <button><a
+                                                                                                href=<%=`/movies/${page+10}`
+                                                                                                %>
+                                                                                                >&gt;&gt;
+                                                                                            </a></button>
+                                                                                        <% } else { %>
+                                                                                            <button><a
+                                                                                                    href=<%=`/movies/500`
+                                                                                                    %>
+                                                                                                    >&gt;&gt;
+                                                                                                </a></button>
+                                                                                            <% } %>

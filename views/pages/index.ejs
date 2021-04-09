@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="/search" method="post">
+        <input type="text" name="searchInput" id="">
+        <input type="submit" value="search">
+    </form>
+
+    <section class="grid">
+        <% data.forEach(element=> { %>
+            <figure>
+                <img src=<%=`https://image.tmdb.org/t/p/w500/${element.poster_path}`%> alt="">
+                <figcaption>
+                    <h1>
+                        <%=`${element.original_title}`%>
+                    </h1>
+                    <a href=<%=`/movieDetails/${element.id}`%>>Details </a>
+                </figcaption>
+            </figure>
+            <% }) %>
+    </section>
+    <%- include('../partials/pagination.ejs') %>
+</body>
+
+</html>
