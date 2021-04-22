@@ -5,22 +5,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 
 <body>
 
-    <figure>
-        <img src=<%=`https://image.tmdb.org/t/p/w500/${data.poster_path}`%> alt="">
-        <figcaption>
-            <h1>
-                <%=`${data.original_title}`%>
-            </h1>
+    <h1>Film Details:</h1>
+
+    <div class="wrapper_one_film">
+
+        <div>
+
+            <img src=<%="http://image.tmdb.org/t/p/w400" + data.poster_path %> alt="">
+
+        </div>
+
+        <div class="film_description">
+            <h2>
+                <%=`${data.title}`%>
+            </h2>
+
+            <h3>Short description:</h3>
+
             <p>
                 <%=`${data.overview}`%>
             </p>
-        </figcaption>
-    </figure>
+
+            <h3 class="genres_inline">Genres:</h3>
+
+            <% data.genres.forEach(element=> { %>
+                <span>
+                    <%= element.name %> /
+                </span>
+                <% }) %>
+
+                    <h4>Relesase date: <%= data.release_date %></h4>
+
+                    <form action="/favorites" method="get">
+                        <input type="submit" value="ADD to FAVORITES" id="btn_submit">
+                    </form>
+        </div>
+
+    </div>
+
 
 </body>
 

@@ -1,0 +1,132 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #dde1e7;
+}
+
+.iconv{
+    font-family: 'New Tegomin', serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+img {
+    width: 100%;
+    border-radius: 15%;
+
+    vertical-align: bottom;
+}
+
+.search_wrapper{
+    text-align: center;
+    padding-bottom: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+
+figure{
+    
+    border-radius: 15%;
+    transition: all .9s;
+}
+
+figure:hover{
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+
+
+.wrapper_one_film{
+    text-align: center;
+    display: flex;
+    justify-content: space-around; 
+}
+
+.film_description{
+    width: 40vw;
+    text-align: left;
+}
+
+.genres_inline{
+    display: inline-block;
+}
+
+/* .pagination{
+    text-align: center;
+} */
+
+.container_pag{
+    text-align: center;
+
+background: #dde1e7;
+  padding: 25px;
+  border-radius: 3px;
+  box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+}
+
+.paginator{
+    width:90%;
+}
+
+#btn, #btn_submit, .paginator button {
+    flex: 1;
+    margin: 0px 5px;
+    background: #dde1e7;
+    border-radius: 3px;
+    box-shadow: -3px -3px 7px #ffffff73, 3px 3px 5px rgba(94, 104, 121, 0.288);
+    border:none;
+    transition: all 1.4s;
+  }
+
+  #btn{
+      background:white;
+      height:30px;
+      outline: none;
+  }
+
+  #btn_submit{
+      border-radius: 20%;
+      color:rgb(228, 157, 25);
+      height:30px;
+      outline: none;
+      font-family: 'New Tegomin', serif;  
+  }
+
+
+
+
+  .paginator button:hover{
+    box-shadow: inset -3px -3px 7px #ffffff73,
+    inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+    transition: all 1.4s;
+
+  }
+
+  #btn_submit:hover{
+    color: #333;
+    box-shadow: -5px -5px 7px #ffffff73, 5px 5px 8px rgba(94, 104, 121, 0.288);
+    cursor: pointer;
+
+  }
+
+  #btn_submit:active{
+    box-shadow: inset -3px -3px 7px #ffffff73,
+    inset 3px 3px 5px rgba(94, 104, 121, 0.288);
+  }
+
+
+.paginator a{
+    text-decoration: none;
+    color:#444;
+
+    font-size: 18px;
+  text-decoration: none;
+  color: #4d3252;
+  height: 45px;
+  width: 55px;
+  display: block;
+  line-height: 45px;
+}

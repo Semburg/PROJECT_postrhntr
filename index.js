@@ -5,7 +5,7 @@ require('dotenv').config()
 //initialize Server
 const app = express()
 // initialize Port (externe server||local)
-const PORT = process.env.PORT || 5000
+const PORT = process.env.PORT || 5005
 // listening to server at Port (externe server Port||local port)
 app.listen(PORT, () => {
     console.log(`http://localhost:${PORT}`)
