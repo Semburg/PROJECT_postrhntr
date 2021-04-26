@@ -1,15 +1,35 @@
 const express = require('express');
 const fetch = require('node-fetch');
+const mongoose = require('mongoose');
+var cors = require('cors');
 require('dotenv').config()
+
+
 
 //initialize Server
 const app = express()
+
+// init cors middleware
+app.use(cors())
 // initialize Port (externe server||local)
 const PORT = process.env.PORT || 5005
-// listening to server at Port (externe server Port||local port)
-app.listen(PORT, () => {
-    console.log(`http://localhost:${PORT}`)
+
+// Connection to DB
+
+const DbUri = "mongodb+srv://super2:super@sb2.hlqlz.mongodb.net/favorites_films?retryWrites=true&w=majority"
+
+mongoose.connect(DbUri, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }, () => {
+    console.log('Database connected')
+
+    //! listening to server at Port (externe server Port||local port)
+    //! inside of the mongoconnection
+    app.listen(PORT, () => {
+        console.log(`http://localhost:${PORT}`)
+    })
+
 })
+
+
 
 // Define static folder 
 app.use(express.static('public'))
@@ -61,4 +81,8 @@ app.get('/search/:word/:page', (req, res) => {
             console.log(data);
             res.render('pages/index', { data: data.results, page: req.params.page })
         })
+})
+
+app.get('/favorites', (req, res) => {
+    res.render("pages/favorites")
 })

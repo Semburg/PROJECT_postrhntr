@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style.css">
-    <title>Collections</title>
+    <title>Favorites</title>
 </head>
 
 <body>
@@ -27,26 +27,7 @@
         </form>
     </div>
    
-
-    <section class="wrapper">
-        <% data.forEach(element=> { %>
-
-            <a href=<%=`/movieDetails/${element.id}`%>>
-                <figure>
-                    <img src=<%=`https://image.tmdb.org/t/p/w500/${element.poster_path}`%> alt="">
-                    
-                </figure>
-            </a>
-            <% }) %>
-    </section>
-
-    <section class="container_pag">
-        <div class="paginator">
-            <%- include('../partials/pagination.ejs') %>
-        </div>
-    </section>
-    
-    
+ 
 
 </body>
 
