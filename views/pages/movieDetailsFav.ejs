@@ -42,8 +42,8 @@
 
                     <h4>Relesase date: <%= data.release_date %></h4>
 
-                    <form action= <%= `/add/${data.id}` %>  method="post">
-                        <input type="submit" value="ADD to FAVORITES" id="btn_submit">
+                    <form action= <%= `/delete/${data.id}` %>  method="get">
+                        <input type="submit" value="DELETE from FAVORITES" id="btn_submit">
                     </form>
         </div>
 

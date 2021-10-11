@@ -22,10 +22,24 @@
             <input type="submit" value="SEARCH" id="btn_submit">
         </form>
 
-        <form action="/favorites" method="get">
-            <input type="submit" value="FAVORITES" id="btn_submit">
+        <form action="/" method="get">
+            <input type="submit" value="ALL" id="btn_submit">
         </form>
     </div>
+
+    <section class="wrapper">
+        <% data.forEach(element=> { %>
+
+            <a href=<%=`/movieDetails/${element.id}`%>>
+                <figure>
+                    <img src=<%=`https://image.tmdb.org/t/p/w500/${element.url}`%> alt="">
+                    
+                </figure>
+            </a>
+            <% }) %>
+    </section>
+
+
    
  
 
